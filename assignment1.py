@@ -34,7 +34,8 @@ def process(mpi,path):
 				twitter = Twitter(event)
 				if twitter.hashtag:
 					hashtag = twitter.hashtag
-					hashtags[hashtag] = hashtags.get(hashtag,0) + 1
+					for h in hashtag:
+						hashtags[h] = hashtags.get(h,0) + 1
 				if twitter.lang:
 					lang = twitter.lang
 					languages[lang] = languages.get(lang,0) + 1
@@ -46,7 +47,7 @@ class Ranking:
 		hashtags_list = mpi.comm.gather(hashtags,root=0)
 		langs_list = mpi.comm.gather(languages,root=0)
 		if mpi.rank ==0:
-			print(len(hashtags_list))
+			#print(len(hashtags_list))
 			self.combined_hashtags = self.combine(hashtags_list)
 			self.combined_langs = self.combine(langs_list)
 	def combine(self,uncombined_data):
@@ -69,7 +70,8 @@ class Twitter:
 			if doc.get('entities'):
 				entities = doc['entities']
 				if entities.get('hashtags'):
-					self.hashtag = entities['hashtags'][0]['text'].lower()
+					hashtag_list = entities['hashtags']
+					self.hashtag = [each['text'].lower() for each in hashtag_list]
 				else:
 					self.hashtag = None
 			if doc.get('lang'):
@@ -88,12 +90,13 @@ if __name__ == "__main__":
 	dataset = ["tinyTwitter.json","smallTwitter.json","bigTwitter.json"]
 	mpi = Mpi()
 	TOP = 10	# top10
-	hashtags,languages = process(mpi,dataset[1])
-	#print(len(hashtags),len(languages),mpi.rank,mpi.size)
-	ranking = Ranking(mpi,hashtags,languages)
-	if mpi.rank == 0:
-		top_hashtags,top_langs = ranking.get_top_rank(TOP)
-		print('For dataset',dataset[1],':')
-		print(top_hashtags)
-		print(top_langs)
-	
+	for data in dataset:
+		hashtags,languages = process(mpi,data)
+		#print(len(hashtags),len(languages),mpi.rank,mpi.size)
+		ranking = Ranking(mpi,hashtags,languages)
+		if mpi.rank == 0:
+			top_hashtags,top_langs = ranking.get_top_rank(TOP)
+			print("==================================")
+			print('For dataset',data,':')
+			print(top_hashtags)
+			print(top_langs)

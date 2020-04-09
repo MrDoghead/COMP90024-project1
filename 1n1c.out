@@ -1,8 +1,16 @@
-<class 'list'>
-1
-[('climatechange', 26), ('scottyfrommarketing', 25), ('auspol', 20), ('sonicmovie', 14), ('australianfires', 12), ('breaking', 11), ('ilovesydney', 11), ('9news', 10), ('pushawardsmaywards', 9), ('nswfires', 9)]
-[('en', 4127), ('und', 302), ('pt', 101), ('fr', 92), ('th', 83), ('es', 61), ('ja', 32), ('tl', 27), ('in', 22), ('ko', 22)]
+==================================
+For dataset tinyTwitter.json :
+[('climatechange', 6), ('scottyfrommarketing', 6), ('auspol', 6), ('australiaburns', 5), ('sonicmovie', 4), ('bushfiresnsw', 3), ('nswfires', 3), ('liarfromtheshire', 2), ('countdown2020withpeck', 2), ('australianfires', 2)]
+[('en', 832), ('und', 69), ('fr', 18), ('pt', 17), ('es', 16), ('th', 9), ('tl', 6), ('de', 4), ('ar', 4), ('zh', 4)]
+==================================
+For dataset smallTwitter.json :
+[('scottyfrommarketing', 31), ('auspol', 31), ('climatechange', 29), ('australiaburns', 24), ('australianfires', 22), ('sydnye', 19), ('sonicmovie', 17), ('goavsgo', 13), ('bushfirecrisis', 12), ('nswfires', 12)]
+[('en', 4127), ('und', 302), ('pt', 101), ('fr', 92), ('th', 83), ('es', 61), ('ja', 32), ('tl', 27), ('ko', 22), ('in', 22)]
+==================================
+For dataset bigTwitter.json :
+[('auspol', 19878), ('coronavirus', 10110), ('มาพ่องเพิ่งอะไร', 7531), ('firefightaustralia', 6812), ('oldme', 6418), ('sydney', 6196), ('scottyfrommarketing', 5185), ('grammys', 5085), ('assange', 4689), ('sportsrorts', 4516)]
+[('en', 3107115), ('und', 252117), ('th', 134571), ('pt', 125858), ('es', 74028), ('ja', 49929), ('tl', 44560), ('in', 42296), ('fr', 38098), ('ar', 24501)]
 
-real	0m0.583s
-user	0m0.421s
-sys	0m0.100s
+real	5m12.836s
+user	5m4.132s
+sys	0m8.079s

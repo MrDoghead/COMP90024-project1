@@ -1,22 +1,16 @@
-python: can't open file 'assignment.py': [Errno 2] No such file or directory
-python: can't open file 'assignment.py': [Errno 2] No such file or directory
-python: can't open file 'assignment.py': [Errno 2] No such file or directory
--------------------------------------------------------
-Primary job  terminated normally, but 1 process returned
-a non-zero exit code.. Per user-direction, the job has been aborted.
--------------------------------------------------------
-python: can't open file 'assignment.py': [Errno 2] No such file or directory
-python: can't open file 'assignment.py': [Errno 2] No such file or directory
-python: can't open file 'assignment.py': [Errno 2] No such file or directory
-python: can't open file 'assignment.py': [Errno 2] No such file or directory
---------------------------------------------------------------------------
-mpirun detected that one or more processes exited with non-zero status, thus causing
-the job to be terminated. The first process to do so was:
+==================================
+For dataset tinyTwitter.json :
+[('scottyfrommarketing', 6), ('auspol', 6), ('climatechange', 6), ('australiaburns', 5), ('sonicmovie', 4), ('nswfires', 3), ('bushfiresnsw', 3), ('เป๊กผลิตโชค', 2), ('nye', 2), ('sydnye', 2)]
+[('en', 832), ('und', 69), ('fr', 18), ('pt', 17), ('es', 16), ('th', 9), ('tl', 6), ('de', 4), ('ar', 4), ('zh', 4)]
+==================================
+For dataset smallTwitter.json :
+[('scottyfrommarketing', 31), ('auspol', 31), ('climatechange', 29), ('australiaburns', 24), ('australianfires', 22), ('sydnye', 19), ('sonicmovie', 17), ('goavsgo', 13), ('bushfirecrisis', 12), ('เป๊กผลิตโชค', 12)]
+[('en', 4127), ('und', 302), ('pt', 101), ('fr', 92), ('th', 83), ('es', 61), ('ja', 32), ('tl', 27), ('ko', 22), ('in', 22)]
+==================================
+For dataset bigTwitter.json :
+[('auspol', 19878), ('coronavirus', 10110), ('มาพ่องเพิ่งอะไร', 7531), ('firefightaustralia', 6812), ('oldme', 6418), ('sydney', 6196), ('scottyfrommarketing', 5185), ('grammys', 5085), ('assange', 4689), ('sportsrorts', 4516)]
+[('en', 3107115), ('und', 252117), ('th', 134571), ('pt', 125858), ('es', 74028), ('ja', 49929), ('tl', 44560), ('in', 42296), ('fr', 38098), ('ar', 24501)]
 
-  Process name: [[63377,1],1]
-  Exit code:    2
---------------------------------------------------------------------------
-
-real	0m0.520s
-user	0m0.149s
-sys	0m0.158s
+real	1m43.656s
+user	6m12.886s
+sys	0m38.528s
