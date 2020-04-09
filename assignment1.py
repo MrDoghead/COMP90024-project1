@@ -2,8 +2,7 @@
 
 """
 Title:	COMP90024 Cluster and Cloud Computing Assignment 1 - HPC Twitter Processing
-Author:	Chuxin Zou	1061714	zocz@student.unimelb.edu.au
-	Dongnan Cao	970205	dongnanc@student.unimelb.edu.au
+Author:	
 Task:	To implement a simple, parallelized application leveraging the University of Melbourne HPC facility SPARTAN.
 Last editing:	2020-03-09
 """
