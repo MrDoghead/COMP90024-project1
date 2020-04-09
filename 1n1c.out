@@ -1,0 +1,8 @@
+<class 'list'>
+1
+[('climatechange', 26), ('scottyfrommarketing', 25), ('auspol', 20), ('sonicmovie', 14), ('australianfires', 12), ('breaking', 11), ('ilovesydney', 11), ('9news', 10), ('pushawardsmaywards', 9), ('nswfires', 9)]
+[('en', 4127), ('und', 302), ('pt', 101), ('fr', 92), ('th', 83), ('es', 61), ('ja', 32), ('tl', 27), ('in', 22), ('ko', 22)]
+
+real	0m0.583s
+user	0m0.421s
+sys	0m0.100s
