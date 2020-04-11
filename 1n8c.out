@@ -1,28 +1,28 @@
 For dataset bigTwitter.json :
 Top 10 hashtags:
-0. #auspol, 19878
-1. #coronavirus, 10110
-2. #มาพ่องเพิ่งอะไร, 7531
-3. #firefightaustralia, 6812
-4. #oldme, 6418
-5. #sydney, 6196
-6. #scottyfrommarketing, 5185
-7. #grammys, 5085
-8. #assange, 4689
-9. #sportsrorts, 4516
+1. #auspol, 19878
+2. #coronavirus, 10110
+3. #มาพ่องเพิ่งอะไร, 7531
+4. #firefightaustralia, 6812
+5. #oldme, 6418
+6. #sydney, 6196
+7. #scottyfrommarketing, 5185
+8. #grammys, 5085
+9. #assange, 4689
+10. #sportsrorts, 4516
 
 Top 10 languages:
-0. English(en), 3107115
-1. Undetermined(und), 252117
-2. Thai(th), 134571
-3. Portuguese(pt), 125858
-4. Spanish; Castilian(es), 74028
-5. Japanese(ja), 49929
-6. Tagalog(tl), 44560
-7. Undetermined(in), 42296
-8. French(fr), 38098
-9. Arabic(ar), 24501
+1. English(en), 3107115
+2. Undetermined(und), 252117
+3. Thai(th), 134571
+4. Portuguese(pt), 125858
+5. Spanish; Castilian(es), 74028
+6. Japanese(ja), 49929
+7. Tagalog(tl), 44560
+8. Undetermined(in), 42296
+9. French(fr), 38098
+10. Arabic(ar), 24501
 
-real	1m40.285s
-user	12m12.436s
-sys	1m7.171s
+real	1m41.850s
+user	12m19.943s
+sys	1m11.395s

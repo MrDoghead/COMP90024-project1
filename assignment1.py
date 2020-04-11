@@ -106,10 +106,10 @@ if __name__ == "__main__":
 		print("Top 10 hashtags:")
 		for i,hashtag in enumerate(top_hashtags):
 			tag,freq = hashtag
-			output = str(i) + ". #" + tag + ", " + str(freq)
+			output = str(i+1) + ". #" + tag + ", " + str(freq)
 			print(output)
 		print("\nTop 10 languages:")
 		for i,language in enumerate(top_langs):
 			lang,freq = language
-			output = str(i) + ". " + abbr.lookup.get(lang,"Undetermined") + "(" + lang + "), " + str(freq)
+			output = str(i+1) + ". " + abbr.lookup.get(lang,"Undetermined") + "(" + lang + "), " + str(freq)
 			print(output)
