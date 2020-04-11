@@ -4,13 +4,14 @@
 Title:	COMP90024 Cluster and Cloud Computing Assignment 1 - HPC Twitter Processing
 Author:	
 Task:	To implement a simple, parallelized application leveraging the University of Melbourne HPC facility SPARTAN.
-Last editing:	2020-03-09
+Last editing:	2020-03-11
 """
 
 from mpi4py import MPI
 import json
 import sys
 import io
+import languages_and_countries as lc
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
@@ -85,17 +86,30 @@ class Mpi:
         	self.rank = self.comm.Get_rank()
         	self.size = self.comm.Get_size()
 
+class Abbreviation:
+	def __init__(self,lang_list):
+		self.lookup = {}
+		for each in lang_list:
+			abbr,lang = each
+			self.lookup[abbr] = lang
+
 if __name__ == "__main__":
 	dataset = ["tinyTwitter.json","smallTwitter.json","bigTwitter.json"]
-	mpi = Mpi()
 	TOP = 10	# top10
-	for data in dataset:
-		hashtags,languages = process(mpi,data)
-		#print(len(hashtags),len(languages),mpi.rank,mpi.size)
-		ranking = Ranking(mpi,hashtags,languages)
-		if mpi.rank == 0:
-			top_hashtags,top_langs = ranking.get_top_rank(TOP)
-			print("==================================")
-			print('For dataset',data,':')
-			print(top_hashtags)
-			print(top_langs)
+	mpi = Mpi()
+	abbr = Abbreviation(lc.languages)
+	hashtags,languages = process(mpi,dataset[2])
+	ranking = Ranking(mpi,hashtags,languages)
+	if mpi.rank == 0:
+		top_hashtags,top_langs = ranking.get_top_rank(TOP)
+		print('For dataset',dataset[2],':')
+		print("Top 10 hashtags:")
+		for i,hashtag in enumerate(top_hashtags):
+			tag,freq = hashtag
+			output = str(i) + ". #" + tag + ", " + str(freq)
+			print(output)
+		print("\nTop 10 languages:")
+		for i,language in enumerate(top_langs):
+			lang,freq = language
+			output = str(i) + ". " + abbr.lookup.get(lang,"Undetermined") + "(" + lang + "), " + str(freq)
+			print(output)
